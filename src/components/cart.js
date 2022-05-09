@@ -1,9 +1,11 @@
  export function Cart(){
-<section class="cart_area section_padding">
-        <div class="container">
-          <div class="cart_inner">
-            <div class="table-responsive">
-              <table class="table">
+ 
+ return <>
+<section classNameName="cart_area section_padding">
+        <div classNameName="container">
+          <div className="cart_inner">
+            <div className="table-responsive">
+              <table className="table">
                 <thead>
                   <tr>
                     <th scope="col">Product</th>
@@ -15,36 +17,11 @@
                 <tbody>
                   <tr>
                     <td>
-                      <div class="media">
-                        <div class="d-flex">
+                      <div className="media">
+                        <div className="d-flex">
                           <img src="assets/img/gallery/card1.png" alt="" />
                         </div>
-                        <div class="media-body">
-                          <p>Minimalistic shop for multipurpose use</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <h5>$360.00</h5>
-                    </td>
-                    <td>
-                      <div class="product_count">
-                        <span class="input-number-decrement"> <i class="ti-minus"></i></span>
-                        <input class="input-number" type="text" value="1" min="0" max="10"/>
-                        <span class="input-number-increment"> <i class="ti-plus"></i></span>
-                      </div>
-                    </td>
-                    <td>
-                      <h5>$720.00</h5>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="media">
-                        <div class="d-flex">
-                          <img src="assets/img/gallery/card2.png" alt="" />
-                        </div>
-                        <div class="media-body">
+                        <div className="media-body">
                           <p>Minimalistic shop for multipurpose use</p>
                         </div>
                       </div>
@@ -54,7 +31,32 @@
                     </td>
                     <td>
                       <div className="product_count">
-                          <span className="input-number-decrement"> <i class="ti-minus"></i></span>
+                        <span className="input-number-decrement"> <i className="ti-minus"></i></span>
+                        <input className="input-number" type="text" value="1" min="0" max="10"/>
+                        <span className="input-number-increment"> <i className="ti-plus"></i></span>
+                      </div>
+                    </td>
+                    <td>
+                      <h5>$720.00</h5>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div className="media">
+                        <div className="d-flex">
+                          <img src="assets/img/gallery/card2.png" alt="" />
+                        </div>
+                        <div className="media-body">
+                          <p>Minimalistic shop for multipurpose use</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h5>$360.00</h5>
+                    </td>
+                    <td>
+                      <div classNameName="product_count">
+                          <span className="input-number-decrement"> <i className="ti-minus"></i></span>
                           <input className="input-number" type="text" value="1" min="0" max="10"/>
                           <span className="input-number-increment"> <i class="ti-plus"></i></span>
                       </div>
@@ -63,15 +65,15 @@
                       <h5>$720.00</h5>
                     </td>
                   </tr>
-                  <tr class="bottom_button">
+                  <tr className="bottom_button">
                     <td>
-                      <a class="btn_1" href="#">Update Cart</a>
+                      <a className="btn_1" href="#">Update Cart</a>
                     </td>
                     <td></td>
                     <td></td>
                     <td>
-                      <div class="cupon_text float-right">
-                        <a class="btn_1" href="#">Close Coupon</a>
+                      <div className="cupon_text float-right">
+                        <a className="btn_1" href="#">Close Coupon</a>
                       </div>
                     </td>
                   </tr>
@@ -85,15 +87,15 @@
                       <h5>$2160.00</h5>
                     </td>
                   </tr>
-                  <tr class="shipping_area">
+                  <tr className="shipping_area">
                     <td></td>
                     <td></td>
                     <td>
                       <h5>Shipping</h5>
                     </td>
                     <td>
-                      <div class="shipping_box">
-                        <ul class="list">
+                      <div className="shipping_box">
+                        <ul className="list">
                           <li>
                             Flat Rate: $5.00
                             <input type="radio" aria-label="Radio button for following text input"/>
@@ -106,27 +108,27 @@
                             Flat Rate: $10.00
                             <input type="radio" aria-label="Radio button for following text input"/>
                           </li>
-                          <li class="active">
+                          <li className="active">
                             Local Delivery: $2.00
                             <input type="radio" aria-label="Radio button for following text input"/>
                           </li>
                         </ul>
                         <h6>
                           Calculate Shipping
-                          <i class="fa fa-caret-down" aria-hidden="true"></i>
+                          <i className="fa fa-caret-down" aria-hidden="true"></i>
                         </h6>
-                        <select class="shipping_select">
+                        <select className="shipping_select">
                           <option value="1">Bangladesh</option>
                           <option value="2">India</option>
                           <option value="4">Pakistan</option>
                         </select>
-                        <select class="shipping_select section_bg">
+                        <select className="shipping_select section_bg">
                           <option value="1">Select a State</option>
                           <option value="2">Select a State</option>
                           <option value="4">Select a State</option>
                         </select>
-                        <input class="post_code" type="text" placeholder="Postcode/Zipcode" />
-                        <a class="btn_1" href="#">Update Details</a>
+                        <input className="post_code" type="text" placeholder="Postcode/Zipcode" />
+                        <a className="btn_1" href="#">Update Details</a>
                       </div>
                     </td>
                   </tr>
@@ -140,6 +142,7 @@
           </div>
           </div>
       </section>
+      </>
 
 
  }
