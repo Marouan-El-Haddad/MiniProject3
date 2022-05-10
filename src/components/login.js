@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import Navbar from 'react-bootstrap/Navbar';
 export function  Login() {
 const [inputs, setInputs] = useState({});;
 const handleChange = (event) => {

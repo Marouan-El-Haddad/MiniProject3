@@ -36,7 +36,7 @@ export  function Menu() {
                                    <li class="hot"><a href="#">Latest</a>
                                        <ul class="submenu">
                                        <li> <Link to="/productlist">Productlist</Link> </li>
-                                           <li><a href="product_details.html"> Product Details</a></li>
+                                           <li><Link to="/main">Main</Link> </li>
                                        </ul>
                                    </li>
                                    <li><a href="blog.html">Blog</a>
