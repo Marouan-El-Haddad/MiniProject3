@@ -5,6 +5,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
  
  export function Categories(){
+     //cat - Categories
     const [cat, setPost] = React.useState(null);
 
     React.useEffect(() => {
@@ -18,8 +19,24 @@ import { useState, useEffect } from "react";
     }, []);
     if (!cat) return null;
   
-    console.log(cat);
+
   
+  //catprods- all products in a specific category
+    const [catprods, setcatprods] = React.useState(null);
+
+    React.useEffect(() => {
+      axios.get(`http://127.0.0.1:3001/prodcat/meals`,{
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        }}).then((response) => {
+            setcatprods(response.data);
+     
+      });
+    }, []);
+    if (!catprods) return null;
+  
+    
+
   
     return (
         <div class="popular-items section-padding row">
