@@ -22,18 +22,6 @@ import { useState, useEffect } from "react";
 
   
   //catprods- all products in a specific category
-    const [catprods, setcatprods] = React.useState(null);
-
-    React.useEffect(() => {
-      axios.get(`http://127.0.0.1:3001/prodcat/meals`,{
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        }}).then((response) => {
-            setcatprods(response.data);
-     
-      });
-    }, []);
-    if (!catprods) return null;
   
     
 
@@ -58,6 +46,7 @@ import { useState, useEffect } from "react";
     
 <div  key={item} class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
 <div class="single-popular-items mb-50 text-center">
+
     <div class="popular-img">
         
         <div class="img-cap">
@@ -72,7 +61,9 @@ import { useState, useEffect } from "react";
       
         
     </div>
+  
 </div>
+
 </div>
         
         
