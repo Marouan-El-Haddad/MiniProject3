@@ -4,6 +4,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import {Categories} from './components/categories';
+import {Conditional} from './components/meal';
 import {Login} from './components/login';
 import {Footer} from './components/footer';
 import reportWebVitals from './reportWebVitals';
@@ -13,19 +14,29 @@ import { Productlist } from "./components/productlist";
 import { Menu } from './components/menu';
 import { Cart } from './components/cart';
 import { Hero } from './components/hero';
+ import {useLocation} from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
+    
+   
     <>
+    
     
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<Menu />}>
+    <Route path="/"   element={  <><Menu /><Categories /></>}>
+   
+  
     <Route path="/login" element={<Login />}/>
     <Route path="/cart" element={<Cart />}/>
-    <Route path="/productlist" element={<Productlist items={["meal","snack","drink"]} />}/>
-      
+    <Route path="/productlist" element={<Productlist  />}/>
+    <Route path="/drinks" element={<Login />}/>
+ <Route path="/meals" element={<Conditional Categ="meals"/>}/>
+ <Route path="/snacks" element={<Login />}/>
+
     </Route> 
 
     

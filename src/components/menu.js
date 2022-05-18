@@ -61,11 +61,7 @@ export  function Menu() {
                     
                        <div class="header-right">
                            <ul>
-                               <li>
-                                   <div class="nav-search search-switch">
-                                       <span class="flaticon-search"></span>
-                                   </div>
-                               </li>
+                               
                                <li> <Link to="/login"><span class="flaticon-user"></span></Link></li>
                                <li><Link to="/cart"><span class="flaticon-shopping-cart"></span></Link> </li>
                            </ul>

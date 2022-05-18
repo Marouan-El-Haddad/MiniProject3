@@ -10,7 +10,7 @@ export function Productlist()
   const [prod, setPost] = React.useState(null);
 
   React.useEffect(() => {
-    axios.get(`http://127.0.0.1:3001/prod`,{
+    axios.get(`http://127.0.0.1:3001/products`,{
       headers: {
         'Access-Control-Allow-Origin': '*',
       }}).then((response) => {
@@ -27,19 +27,22 @@ export function Productlist()
 <div>
 
    {prod.allProducts.map((item) =>(
-
+   
   <Card  key={item} style={{ width: '18rem' }}>
+ 
   <Card.Img variant="top" src={item.imagePath} />
   <Card.Body>
   
     <Card.Title>{item.productName}</Card.Title>
     <Card.Text>
-    {item.price}
+    Price {item.price}
     </Card.Text>
-    <Button variant="primary">Add</Button>
+  
+    <Button variant="primary mr-2">Add</Button>
     <Button variant="primary">Remove</Button>
   </Card.Body>
 </Card>
+
    ))}
 </div>
 

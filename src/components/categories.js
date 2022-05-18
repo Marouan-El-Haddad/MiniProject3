@@ -3,13 +3,24 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from "react";
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+ Outlet,
+  Link
+} from "react-router-dom";
+
+
  
  export function Categories(){
      //cat - Categories
     const [cat, setPost] = React.useState(null);
 
     React.useEffect(() => {
-      axios.get(`http://127.0.0.1:3001/all`,{
+      axios.get(`http://127.0.0.1:3001/categories`,{
         headers: {
           'Access-Control-Allow-Origin': '*',
         }}).then((response) => {
@@ -40,11 +51,12 @@ import { useState, useEffect } from "react";
                     </div>
                     </div>
                     
-     {cat.uniqueItems.map((item) =>(
+     {cat.map((item) =>( 
 
 
-    
 <div  key={item} class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+
+
 <div class="single-popular-items mb-50 text-center">
 
     <div class="popular-img">
@@ -57,25 +69,26 @@ import { useState, useEffect } from "react";
         </div>
     </div>
     <div class="popular-caption">
-    <h3>{item}</h3>
+    <h3><a href={`/${item}`}>{item}</a></h3>
       
         
     </div>
   
 </div>
 
+<Outlet />
+  
 </div>
+
+
+ 
+
         
-        
-        
+
   
     
      ))}
   </div>
-  
-  
-  
     
-      );
-
-}
+    )
+     }
