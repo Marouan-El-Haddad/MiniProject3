@@ -33,6 +33,14 @@ import  { useEffect, useRef } from "react";
     console.log(meals);
     
 
+    async function removeproduct(productId) {
+      const URI="http://127.0.0.1:3001/cart/4/products"
+      let res = await axios.delete(`${URI}/${productId}`, productId)
+      console.log(res);
+    }
+
+
+
 
      async function addproduct(productId,productNumber=1) {
       
@@ -59,7 +67,7 @@ import  { useEffect, useRef } from "react";
     Price {mealy.price}
     </Card.Text>
     <Button variant="primary mr-2"onClick={()=>addproduct(mealy.productId)}>Add</Button>
-    <Button variant="primary">Remove</Button>
+    <Button variant="primary" onClick={()=>removeproduct(mealy.productId)}>Remove</Button>
   </Card.Body>
 </Card>
 
