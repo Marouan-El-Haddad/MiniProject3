@@ -9,6 +9,15 @@ import React from 'react'
  
  export function Meal() {
    
+  
+
+
+
+
+
+
+
+
     const [meals, setMeals] = React.useState(null);
 
     React.useEffect(() => {
@@ -99,23 +108,6 @@ export function Drink() {
 
   console.log(drinks);
   
-  const handleClick = () =>  {
-    axios
-      .post(`http://127.0.0.1:3001/cart/4`, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
-        productId: "3",
-        ProductNumber:"4",
-        UserId:"4",
-        body: "This is a new post."
-      })
-      .then((response) => {
-        setPost(response.data);
-      });
-  }
-
-  if (!post) return "No post!"
 
 
   
@@ -131,7 +123,7 @@ export function Drink() {
   <Card.Text>
   Price {drinky.price}
   </Card.Text>
-  <Button variant="primary mr-2" onClick={handleClick}>Add</Button>
+  <Button variant="primary mr-2" >Add</Button>
   <Button variant="primary">Remove</Button>
 </Card.Body>
 </Card>

@@ -1,43 +1,60 @@
-import { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import axios from 'axios';
-export function  Login() {
-const [inputs, setInputs] = useState({});;
-const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import axios from "axios";
+import uuid from 'react-uuid';
+
+
+const baseURL = "http://127.0.0.1:3001/user";
+
+export function Login() {
+    const [firstName, setFirstName] = useState('');
+    const [familyName, setFamilyName] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const navigate = useNavigate();
+
+    async function signUp()
+
+    {
+        const id = uuid();
+        const user = {
+            id: id,
+            firstName: firstName,
+            familyName: familyName,
+            password: password,
+            email: email
+        };
+        let response = await axios.post(baseURL, user);
+        if (response.status === 201) {
+            navigate('/');
+        }
+        response = await response;
+
+        //store the user in the local storage
+        localStorage.setItem('user', JSON.stringify(user));
+
+
+        navigate('/');
+    }
 
 
 
-  }
-
-
-
-  
-
-   return  <Form>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Email address</Form.Label>
-      <Form.Control type="email" value={inputs.email || ""} 
-        onChange={handleChange} placeholder="Enter email" />
-      <Form.Text className="text-muted">
-        We'll never share your email with anyone else.
-      </Form.Text>
-    </Form.Group>
-  
-    <Form.Group className="mb-3" controlId="formBasicPassword">
-      <Form.Label>Password</Form.Label>
-      <Form.Control value={inputs.password || ""} 
-          onChange={handleChange} type="password" placeholder="Password" />
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check type="checkbox" label="Check me out" />
-    </Form.Group>
-    <Button variant="primary" type="submit">
-      Submit
-    </Button>
-  </Form>
-
+    return (
+        <div className="col-sm-6 offset-sm-3">
+            <h1>Register Page</h1>
+            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="form-control"
+                   placeholder="First Name"/>
+            <br/>
+            <input type="text" value={familyName} onChange={(e) => setFamilyName(e.target.value)}
+                   className="form-control" placeholder="Family Name"/>
+            <br/>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}
+                   className="form-control" placeholder="Password"/>
+            <br/>
+            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control"
+                   placeholder="Email"/>
+            <br/>
+            <button onClick={signUp} className="btn btn-primary">Sign Up</button>
+        </div>
+    );
 }

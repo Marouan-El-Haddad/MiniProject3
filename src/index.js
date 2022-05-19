@@ -34,7 +34,7 @@ root.render(
    
   
     <Route path="/login" element={<Login />}/>
-    <Route path="/cart" element={<Cart />}/>
+    <Route path="/cart" element={<Cart  />}/>
     <Route path="/productlist" element={<Productlist  />}/>
  <Route path="/meals" element={<Conditional Categ="meals"/>}/>
  <Route path="/snacks" element={<Conditional Categ="snacks"/>}/>
