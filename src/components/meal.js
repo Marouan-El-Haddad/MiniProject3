@@ -2,8 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import React from 'react'
- 
-
+import  { useEffect, useRef } from "react";
 
   
  
@@ -33,6 +32,21 @@ import React from 'react'
   
     console.log(meals);
     
+
+
+     async function addproduct(productId,productNumber=1) {
+      
+    
+      const adder = {
+        "productId":productId,
+        "productNumber":productNumber
+      
+    }
+    let response = await axios.post("http://127.0.0.1:3001/cart/4", adder);
+    console.log(response);
+  }
+  
+
     return(<div>
     {meals.map((mealy) =>(
        
@@ -40,11 +54,11 @@ import React from 'react'
   <Card.Img variant="top" src={mealy.imagePath} />
   <Card.Body>
   
-    <Card.Title>{mealy.productName}</Card.Title>
+    <Card.Title >{mealy.productName}</Card.Title>
     <Card.Text>
     Price {mealy.price}
     </Card.Text>
-    <Button variant="primary mr-2">Add</Button>
+    <Button variant="primary mr-2"onClick={()=>addproduct(mealy.productId)}>Add</Button>
     <Button variant="primary">Remove</Button>
   </Card.Body>
 </Card>
@@ -78,7 +92,7 @@ export function Snack() {
 <Card.Img variant="top" src={snacky.imagePath} />
 <Card.Body>
 
-  <Card.Title>{snacky.productName}</Card.Title>
+  <Card.Title  >{snacky.productName}</Card.Title>
   <Card.Text>
   Price {snacky.price}
   </Card.Text>
