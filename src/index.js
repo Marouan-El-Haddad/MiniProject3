@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import {Categories} from './components/categories';
 import {Conditional} from './components/meal';
-import {Login} from './components/login';
+import {Login, Register} from './components/login';
 import {Footer} from './components/footer';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,6 +34,7 @@ root.render(
    
   
     <Route path="/login" element={<Login />}/>
+    <Route path="/register" element={<Register />}/>
     <Route path="/cart" element={<Cart  />}/>
     <Route path="/productlist" element={<Productlist  />}/>
  <Route path="/meals" element={<Conditional Categ="meals"/>}/>

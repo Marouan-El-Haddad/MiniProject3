@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { Outlet, Link } from "react-router-dom";
-import logo from 'C:\\Users\\sandr\\Desktop\\third\\MiniProject3\\src\\components\\img\\hero\\gallery_hero.jpg'
+import logo from './\\img\\mainpic.jpg'
 export function Hero (){
 
 return (

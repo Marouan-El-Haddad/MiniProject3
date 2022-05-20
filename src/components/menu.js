@@ -17,6 +17,8 @@ export function Menu() {
     var user = JSON.parse(localStorage.getItem('user'));
     var localFirstName = (user === null) ? "" : user.firstName;
 
+    
+
 
     return <>
 
@@ -35,18 +37,19 @@ export function Menu() {
                                 <nav>
                                     <ul id="navigation">
                                         <li><Link to="/">Home</Link></li>
-                                        <li><a href="shop.html">shop</a></li>
+                                        <li><Link to="/productlist">Products</Link></li>
                                         <li><a href="about.html">about</a></li>
                                         <li className="hot"><a href="#">Latest</a>
                                             <ul className="submenu">
-                                                <li><Link to="/productlist">Productlist</Link></li>
+                                                <li></li>
                                                 <li><Link to="/main">Main</Link></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html">Blog</a>
+                                        <li><a href="blog.html">Categories</a>
                                             <ul className="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                                <li><a href="blog.html">Drinks</a></li>
+                                                <li><a href="blog-details.html">Meals</a></li>
+                                                <li><a href="blog-details.html">Snacks</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Pages</a>
@@ -59,14 +62,30 @@ export function Menu() {
                                             </ul>
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
-                                    </ul>
+
+
+                                        <li>{localFirstName}</li>
+                                    <li> <a href="#"><span className="flaticon-user"></span></a>
+                                    
+                                    <ul className="submenu">
+                                             <li><span>You are not logged in</span></li>
+                                                <li><Link to="/login">Login</Link></li>
+                                                </ul>
+                                    
+                                    </li>
+                                    
+                                
+                                        </ul>
                                 </nav>
                             </div>
-
                             <div className="header-right">
                                 <ul>
-                                    <li>{localFirstName}</li>
-                                    <li><Link to="/login"><span className="flaticon-user"></span></Link></li>
+                                    
+
+
+                                    
+
+
                                     <li><Link to="/cart"><span className="flaticon-shopping-cart"></span></Link></li>
                                 </ul>
                             </div>
