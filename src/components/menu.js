@@ -11,20 +11,17 @@ import "./css/nice-select.css"
 import "./css/fontawesome-all.min.css"
 import "./css/style.css"
 import "./css/slicknav.css"
-import {Login} from './login';
-import {useState, useContext} from 'react';
-import { createContext } from 'react';
 
 export function Menu() {
-    
-    let user = JSON.parse(localStorage.getItem('user'));
-    
-    console.log(user);
-    var localFirstName = (user === null) ? "" : user.firstName;
 
-       var counter= 0;   
-       
- 
+    const user = JSON.parse(localStorage.getItem('user'));
+    const localFirstName = user?.firstName ?? 'Anon';
+
+    function logOut() {
+        localStorage.removeItem('user');
+        window.location.reload();
+    }
+
     return <>
 
         <header>
@@ -65,35 +62,38 @@ export function Menu() {
                                                 <li><a href="confirmation.html">Confirmation</a></li>
                                                 <li><a href="checkout.html">Product Checkout</a></li>
                                             </ul>
-                                            <h4></h4>
-                                          <h4></h4> 
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
-                                          
-
                                         <li>{localFirstName}</li>
-                                    <li> <a href="#"><span className="flaticon-user"></span></a>
-                                    
-                                    <ul className="submenu">
-                                             <li><span>You are not logged in</span></li>
-                                                <li><Link to="/login">Login</Link></li>
+
+
+                                        {!user ?
+                                            <li><a href="#"><span className="flaticon-user"></span></a>
+                                                <ul className="submenu">
+                                                    <li><span>You are not logged in</span></li>
+                                                    <li>
+                                                        <a className="btn" href="/login">Login</a>
+
+                                                    </li>
                                                 </ul>
-                                    
-                                    </li>
-                                    
-                                
-                                        </ul>
+                                            </li> :
+                                            <li><a href="#"><span className="flaticon-user"></span></a>
+                                                <ul className="submenu">
+                                                    <li><span>You are logged in</span></li>
+                                                    <li>
+                                                        <button onClick={logOut}>Logout</button>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        }
+                                    </ul>
                                 </nav>
                             </div>
                             <div className="header-right">
                                 <ul>
-                                    
 
 
-                                    
-
-
-                                    <li><Link to="/cart"> <span className="flaticon-shopping-cart">{counter}</span></Link></li>
+                                    <li><Link to="/cart"><span className="flaticon-shopping-cart"></span></Link></li>
                                 </ul>
                             </div>
                         </div>
