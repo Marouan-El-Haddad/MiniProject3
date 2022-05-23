@@ -34,23 +34,30 @@ import  { useEffect, useRef } from "react";
     
 
     async function removeproduct(productId) {
-      const URI="http://127.0.0.1:3001/cart/4/products"
-      let res = await axios.delete(`${URI}/${productId}`, productId)
-      console.log(res);
+      let user = JSON.parse(localStorage.getItem('user'));
+      const URI=`http://127.0.0.1:3001/cart/${user.id}/products`;
+      try{
+        let res = await axios.delete(`${URI}/${productId}`)
+        console.log(res);
+      }catch(err){
+        console.log(err);
+      }
+     
     }
 
 
 
 
      async function addproduct(productId,productNumber=1) {
-      
+      let user = JSON.parse(localStorage.getItem('user'));
     
       const adder = {
         "productId":productId,
         "productNumber":productNumber
       
     }
-    let response = await axios.post("http://127.0.0.1:3001/cart/4", adder);
+    let response = await axios.post(`http://127.0.0.1:3001/cart/${user.id}`
+    , adder);
     console.log(response);
   }
   

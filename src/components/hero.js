@@ -9,7 +9,7 @@ return (
     <Carousel>
   <Carousel.Item>
     <img
-      className="d-block w-500"
+      className="d-block w-100"
       src={logo}
       alt="First slide"
     />

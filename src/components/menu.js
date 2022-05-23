@@ -11,15 +11,20 @@ import "./css/nice-select.css"
 import "./css/fontawesome-all.min.css"
 import "./css/style.css"
 import "./css/slicknav.css"
+import {Login} from './login';
+import {useState, useContext} from 'react';
+import { createContext } from 'react';
 
 export function Menu() {
     
-    var user = JSON.parse(localStorage.getItem('user'));
+    let user = JSON.parse(localStorage.getItem('user'));
+    
+    console.log(user);
     var localFirstName = (user === null) ? "" : user.firstName;
 
-    
-
-
+       var counter= 0;   
+       
+ 
     return <>
 
         <header>
@@ -60,9 +65,11 @@ export function Menu() {
                                                 <li><a href="confirmation.html">Confirmation</a></li>
                                                 <li><a href="checkout.html">Product Checkout</a></li>
                                             </ul>
+                                            <h4></h4>
+                                          <h4></h4> 
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
-
+                                          
 
                                         <li>{localFirstName}</li>
                                     <li> <a href="#"><span className="flaticon-user"></span></a>
@@ -86,7 +93,7 @@ export function Menu() {
                                     
 
 
-                                    <li><Link to="/cart"><span className="flaticon-shopping-cart"></span></Link></li>
+                                    <li><Link to="/cart"> <span className="flaticon-shopping-cart">{counter}</span></Link></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,21 +1,28 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import axios from "axios";
-
+import React from 'react'
 
 const baseURL = "http://127.0.0.1:3001/user";
 
-
+let context = React.createContext(null);
 export function Login() {
+
+    const [fName, setfName] = useState("firstName");
+    const [lName, setlName] = useState("LastName");
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     async function loginUser() {
+       
+
         const user = {
             password: password,
             id: email
         };
         try {
+            console.log(user);
             let response = await axios.put(baseURL, user);
             let userInfo= await axios.get(baseURL + "/" + email);
             console.log(userInfo.data.userInformation.email);
@@ -30,9 +37,10 @@ export function Login() {
         }
 
             //localStorage.setItem('user', JSON.stringify(response));
-
+            
     }
     return (
+        <context.Provider value={{ fName, lName }}>
         <div className="col-sm-6 offset-sm-3">
             <h1>Login Page</h1>
             <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control"
@@ -48,6 +56,7 @@ export function Login() {
 
 
         </div>
+        </context.Provider>
     );
 }
 
