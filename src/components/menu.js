@@ -11,11 +11,12 @@ import "./css/nice-select.css"
 import "./css/fontawesome-all.min.css"
 import "./css/style.css"
 import "./css/slicknav.css"
+import "./css/logOutbutton.css"
 
 export function Menu() {
 
     const user = JSON.parse(localStorage.getItem('user'));
-    const localFirstName = user?.firstName ?? 'Anon';
+    const localFirstName = user?.firstName ?? '';
 
     function logOut() {
         localStorage.removeItem('user');
@@ -32,7 +33,7 @@ export function Menu() {
                         <div className="menu-wrapper">
 
                             <div className="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""/></a>
+                                <a href="index.html"><img src="https://i.imgur.com/GzS1pvl.png" alt=""/></a>
                             </div>
 
                             <div className="main-menu d-none d-lg-block">
@@ -71,17 +72,14 @@ export function Menu() {
                                             <li><a href="#"><span className="flaticon-user"></span></a>
                                                 <ul className="submenu">
                                                     <li><span>You are not logged in</span></li>
-                                                    <li>
-                                                        <a className="btn" href="/login">Login</a>
-
-                                                    </li>
+                                                    <li><Link to="/login" id="logIn">Login</Link></li>
                                                 </ul>
                                             </li> :
                                             <li><a href="#"><span className="flaticon-user"></span></a>
                                                 <ul className="submenu">
                                                     <li><span>You are logged in</span></li>
                                                     <li>
-                                                        <button onClick={logOut}>Logout</button>
+                                                        <button onClick={logOut} id="logOut">Sign out</button>
                                                     </li>
                                                 </ul>
                                             </li>
