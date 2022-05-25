@@ -5,7 +5,8 @@ import { Outlet, Link } from "react-router-dom";
 import logo from './\\img\\mainpic.jpg'
 export function Hero (){
 
-return (
+return (<div class="flex" style={{margin: 50}} 
+>
     <Carousel>
   <Carousel.Item>
     <img
@@ -44,5 +45,6 @@ return (
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+</div>
 );
 }

@@ -7,9 +7,53 @@ import Button from 'react-bootstrap/Button';
 import React from 'react';
 import axios from 'axios';
 
+export  function Proder(props){
+ 
+
+  
+  const prodid=props.prodid
+ const [info, setInfo] = React.useState(0);
+  React.useEffect(() => {
+ 
+  const URI="http://127.0.0.1:3001/product"
+   axios.get(`${URI}/${prodid}/`,{
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    }}).then((response) => {
+    setInfo(response.data);
+   
+ 
+  });
+}, [prodid]);
+
+if (!info) return null;
+ 
+
+  console.log(info);
+
+return(
+ <>
+  <td>
+                   
+                   </td>
+                     <td>
+                     {info.productName}
+                   </td>
+                   <td>
+                     {info.price}
+                   </td>
+   
+    
+</>
+
+
+)
+
+}
+
  
  export function Cart(){
- 
+
   const [cartItems, setCart] = React.useState(null);
   React.useEffect(() => {
     let user = JSON.parse(localStorage.getItem('user'));
@@ -23,16 +67,10 @@ import axios from 'axios';
   }, []);
   if (!cartItems) return null;
 
-  console.log(cartItems);
+
 
   
-  async function getprodinfo(productId) {
-    const URI="http://127.0.0.1:3001/cart"
-    let res =  axios.get(`${URI}/${productId}/`, productId)
-   
- 
-    console.log(res);
-  }
+  
 
 
   return (<>
@@ -64,24 +102,20 @@ import axios from 'axios';
                        </div>
                        <div class="media-body">
                         
-                         <p></p>
+                         <p> <Proder prodid={carty.productId}/></p>
                        </div>
                      </div>
                    </td>
                    <td>
-                     <h5> </h5>
-                   </td>
-                   <td>
                      <div class="product_count">
-                   
-                     <td>
-                     <h5>{carty.productNumber}</h5>
-                   </td>
+                     
+               
                      </div>
                    </td>
-                  
+                   {carty.productNumber}
                  </tr>
                  <tr>
+               
                  </tr>
                 
                  
