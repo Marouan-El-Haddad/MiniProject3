@@ -111,7 +111,7 @@ export function Register() {
                         placeholder="Enter email"
                     />
                     <Form.Text className="text-muted">
-                        Your email requires at least one alphanumeric character before @ and .
+                        Your email requires at least one alphanumeric character before @
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
