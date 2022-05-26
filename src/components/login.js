@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import axios from "axios";
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const baseURL = "http://127.0.0.1:3001/user";
 
@@ -78,21 +79,54 @@ export function Register() {
         window.location.href = "/";
     }
     return (
-        <div className="col-sm-6 offset-sm-3">
-            <h1>Register Page</h1>
-            <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="form-control"
-                   placeholder="First Name"/>
-            <br/>
-            <input type="text" value={familyName} onChange={(e) => setFamilyName(e.target.value)}
-                   className="form-control" placeholder="Family Name"/>
-            <br/>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}
-                   className="form-control" placeholder="Password"/>
-            <br/>
-            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control"
-                   placeholder="Email"/>
-            <br/>
-            <button onClick={signUp} className="btn btn-primary">Sign Up</button>
-        </div>
+        <Form>
+
+            <div className="col-sm-6 offset-sm-3">
+                <h1>Register Page</h1>
+                <Form.Group className="mb-3" controlId="formBasicFirstName">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        type="text"
+                        placeholder="Enter your first name"
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicFamilyName">
+                    <Form.Label>Family Name</Form.Label>
+                    <Form.Control
+                        value={familyName}
+                        onChange={(e) => setFamilyName(e.target.value)}
+                        type="text"
+                        placeholder="Enter your last name"
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter email"
+                    />
+                    <Form.Text className="text-muted">
+                        Your email requires at least one alphanumeric character before @ and .
+                    </Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+                        placeholder="Enter your password"
+                    />
+                </Form.Group>
+
+
+                <button onClick={signUp} className="btn btn-primary">Sign Up</button>
+            </div>
+        </Form>
     );
 }
