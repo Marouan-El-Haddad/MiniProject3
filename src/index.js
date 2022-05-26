@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { ProductPage } from './components/meal';
+import { IndividualProduct } from './components/IndividualProduct';
 
 import {Categories} from './components/categories';
 import {Conditional} from './components/meal';
@@ -40,7 +40,7 @@ root.render(
  <Route path="/meals" element={<Conditional Categ="meals"/>}/>
  <Route path="/snacks" element={<Conditional Categ="snacks"/>}/>
  <Route path="/drinks" element={<Conditional Categ="drinks"/>}/>
- <Route path="/product" element={<ProductPage/>}/>
+ <Route path="/product" element={<IndividualProduct/>}/>
  <Route exact path="/" element={ <><Hero /> <Categories /></>} />
  
 

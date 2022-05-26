@@ -41,29 +41,21 @@ export function Menu() {
                                     <ul id="navigation">
                                         <li><Link to="/">Home</Link></li>
                                         <li><Link to="/productlist">Products</Link></li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li className="hot"><a href="#">Latest</a>
+                                       
+                                        <li className="hot"><a href="#">New Arrivals</a>
                                             <ul className="submenu">
                                                 <li></li>
                                                 <li><Link to="/main">Main</Link></li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog.html">Categories</a>
+                                        <li><a href="#">Categories</a>
                                             <ul className="submenu">
-                                                <li><a href="blog.html">Drinks</a></li>
-                                                <li><a href="blog-details.html">Meals</a></li>
-                                                <li><a href="blog-details.html">Snacks</a></li>
+                                                <li><a href="/drinks">Drinks</a></li>
+                                                <li><a href="/meals">Meals</a></li>
+                                                <li><a href="/snacks">Snacks</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Pages</a>
-                                            <ul className="submenu">
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="elements.html">Element</a></li>
-                                                <li><a href="confirmation.html">Confirmation</a></li>
-                                                <li><a href="checkout.html">Product Checkout</a></li>
-                                            </ul>
-                                        </li>
+                                      
                                         <li><a href="contact.html">Contact</a></li>
                                         <li>{localFirstName}</li>
 
