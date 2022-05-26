@@ -13,7 +13,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { Productlist } from "./components/productlist";
 import { Menu } from './components/menu';
-import { Cart } from './components/cart';
+import { Areloggedin, Cart } from './components/cart';
+import { NewProducts } from './components/newproducts';
+
 import { Hero } from './components/hero';
 
 
@@ -35,7 +37,8 @@ root.render(
   
     <Route path="/login" element={<Login />}/>
     <Route path="/register" element={<Register />}/>
-    <Route path="/cart" element={<Cart  />}/>
+    <Route path="/cart" element={<Areloggedin  />}/>
+    <Route path="/newarrivals" element={<NewProducts />}/>
     <Route path="/productlist" element={<Productlist  />}/>
  <Route path="/meals" element={<Conditional Categ="meals"/>}/>
  <Route path="/snacks" element={<Conditional Categ="snacks"/>}/>

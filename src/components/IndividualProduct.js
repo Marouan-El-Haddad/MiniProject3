@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import CardGroup from 'react-bootstrap/CardGroup';
+import Badge from 'react-bootstrap/Badge';
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios';
@@ -71,9 +72,12 @@ export function IndividualProduct(props){
   
 
   <Container>
+    <h4>
+    <Badge bg="dark">{info.category}</Badge>
+  </h4>
     <CardGroup>
   <Row>
-    <Col><Card   style={{ width: '18rem' }}>
+    <Col><Card   style={{ width: '25rem' }}>
    <a href="#"> <Card.Img variant="top" src={info.imagePath} /></a>
     <Card.Body>
     

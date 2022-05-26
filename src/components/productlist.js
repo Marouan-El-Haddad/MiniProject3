@@ -51,7 +51,7 @@ export function Productlist()
   
     <Card.Title>{item.productName}</Card.Title>
     <Card.Text>
-    Price {item.price}
+    Price {item.price} DKK
     </Card.Text>
   
     <Button variant="primary mr-1"onClick={()=>addproduct(item.productId)}>Add</Button>

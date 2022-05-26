@@ -63,10 +63,10 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
   }
   
 
-    return(<div>
+    return(<div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
     {meals.map((mealy) =>(
     
-   <Card  key={mealy.productId} style={{ width: '18rem' }}>
+   <Card  key={mealy.productId}  style={{ width: '20rem',margin: '1rem' }}>
  < Link to={{pathname: `/product?${mealy.productId}`}}>  <Card.Img variant="top" src={mealy.imagePath} /> </Link>
   <Card.Body>
   
@@ -101,10 +101,10 @@ export function Snack() {
 
   console.log(snacks);
   
-  return(<div>
+  return(<div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
   {snacks.map((snacky) =>(
      
- <Card  key={snacky} style={{ width: '18rem' }}>
+ <Card  key={snacky}  style={{ width: '20rem',margin: '1rem' }}>
 <Card.Img variant="top" src={snacky.imagePath} />
 <Card.Body>
 
@@ -142,10 +142,10 @@ export function Drink() {
 
   
 
-  return(<div>
+  return(<div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
   {drinks.map((drinky) =>(
      
- <Card  key={drinky} style={{ width: '18rem' }}>
+ <Card  key={drinky}  style={{ width: '20rem',margin: '1rem' }}>
 <Card.Img variant="top" src={drinky.imagePath} />
 <Card.Body>
 

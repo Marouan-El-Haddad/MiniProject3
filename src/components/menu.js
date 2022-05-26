@@ -33,7 +33,7 @@ export function Menu() {
                         <div className="menu-wrapper">
 
                             <div className="logo">
-                                <a href="index.html"><img src="https://i.imgur.com/GzS1pvl.png" alt=""/></a>
+                                <a href="/"><img src="https://i.imgur.com/GzS1pvl.png" alt=""/></a>
                             </div>
 
                             <div className="main-menu d-none d-lg-block">
@@ -42,11 +42,8 @@ export function Menu() {
                                         <li><Link to="/">Home</Link></li>
                                         <li><Link to="/productlist">Products</Link></li>
                                        
-                                        <li className="hot"><a href="#">New Arrivals</a>
-                                            <ul className="submenu">
-                                                <li></li>
-                                                <li><Link to="/main">Main</Link></li>
-                                            </ul>
+                                        <li className="hot"><a href="/newarrivals">New Arrivals</a>
+                                           
                                         </li>
                                         <li><a href="#">Categories</a>
                                             <ul className="submenu">
@@ -56,7 +53,7 @@ export function Menu() {
                                             </ul>
                                         </li>
                                       
-                                        <li><a href="contact.html">Contact</a></li>
+                                        
                                         <li>{localFirstName}</li>
 
 

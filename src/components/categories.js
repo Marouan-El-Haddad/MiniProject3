@@ -44,7 +44,7 @@ import {
                     <div class="col-xl-7 col-lg-5 col-md-10">
                         <div class="section-tittle mb-70 text-center">
                             <h2>Categories</h2>
-                            <p>What does your heart desire?</p>
+                            <p>What Does Your Heart Desire?</p>
                         </div>
                     
                     </div>

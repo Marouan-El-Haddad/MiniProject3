@@ -29,7 +29,7 @@ return (<div class="flex" style={{margin: 50}}
 
     <Carousel.Caption>
       <h3>Spring snacks</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Fresher than a Spring Chicken.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -41,7 +41,7 @@ return (<div class="flex" style={{margin: 50}}
 
     <Carousel.Caption>
       <h3>Summer Temptations</h3>
-      <p>Surender to your desiers</p>
+      <p>Surrender to your desires!</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

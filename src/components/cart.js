@@ -32,16 +32,14 @@ if (!info) return null;
 
   console.log(info);
 
+ 
 return(
  <>
-  <td>
-                   
-                   </td>
                      <td>
                      {info.productName}
                    </td>
                    <td>
-                     {info.price}
+                     {info.price} DKK
                    </td>
    
     
@@ -55,9 +53,14 @@ return(
  
  export function Cart(){
 
+  let user = JSON.parse(localStorage.getItem('user'));
+
+
   const [cartItems, setCart] = React.useState(null);
+
   React.useEffect(() => {
     let user = JSON.parse(localStorage.getItem('user'));
+    if(user)
     axios.get(`http://127.0.0.1:3001/cart/${user.id}`,{
       headers: {
         'Access-Control-Allow-Origin': '*',
@@ -73,7 +76,6 @@ return(
   
   
 
-
   return (
   
     
@@ -85,15 +87,18 @@ return(
           <div class="cart_inner">
             <div class="table-responsive">
           <table className="table">
+          <h5 scope="col">{user.firstName}</h5>
           {/* If there are no products in the basket No Items added will be displayed */}
-          {cartItems.cart.length===0 && (<Card>  No items added </Card>)} 
+          {cartItems.cart.length===0 || !cartItems && (<Card>  No items added </Card>)} 
           
            {cartItems.cart.map((carty) =>(
 
          
                 < div key={carty}> <thead >
-                        
+             
                <tr>
+               
+               
                  <th scope="col">Product</th>
                  <th scope="col">Price</th>
                  <th scope="col">Quantity</th>
@@ -162,10 +167,22 @@ return(
           };
         
  
-      
+           export function NotLoggedIn() {
+            return <h1>Please sign up.</h1>;
+          }
          
          
-        
+          export function Areloggedin() {
+            let user = JSON.parse(localStorage.getItem('user'));
+               if ( user===null) {
+                
+              return <NotLoggedIn/>
+              
+               
+               }
+
+              return <Cart/>
+              }
         
 
 
