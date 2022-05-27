@@ -7,7 +7,8 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios';
 import React from 'react'
-
+import { AddButton } from './Addbutton';
+import { Removebutton } from './Removebutton';
 
 export function IndividualProduct(props){
 
@@ -98,8 +99,8 @@ export function IndividualProduct(props){
       </Card.Text>
       
     <div class="col"></div>
-    <Button variant="primary mr-2"onClick={()=>addproduct(info.productId)}>Add</Button>
-      <Button variant="primary" onClick={()=>removeproduct(info.productId)}>Remove</Button>
+    <AddButton productId={info.productId}/>
+  <Removebutton productId={info.productId} />
     </Card.Body>
   </Card>
 

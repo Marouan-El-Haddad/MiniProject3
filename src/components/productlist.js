@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from "react";
+import { AddButton } from './Addbutton';
+import { Removebutton } from './Removebutton';
 export function Productlist()
 {
 
@@ -54,8 +56,8 @@ export function Productlist()
     Price {item.price} DKK
     </Card.Text>
   
-    <Button variant="primary mr-1"onClick={()=>addproduct(item.productId)}>Add</Button>
-    <Button variant="primary">Remove</Button>
+    <AddButton productId={item.productId}/>
+  <Removebutton productId={item.productId} />
   </Card.Body>
 </Card>
 

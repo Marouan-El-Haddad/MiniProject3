@@ -8,7 +8,7 @@ import { AddButton } from './Addbutton';
 import { Removebutton } from './Removebutton';
 
 
- 
+
  export function Meal() {
    
   
@@ -37,6 +37,7 @@ import { Removebutton } from './Removebutton';
     
 
     return(<div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
+    
     {meals.map((mealy) =>(
     
    <Card  key={mealy.productId}  style={{ width: '20rem',margin: '1rem' }}>
@@ -75,6 +76,7 @@ export function Snack() {
   console.log(snacks);
   
   return(<div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
+  
   {snacks.map((snacky) =>(
      
  <Card  key={snacky}  style={{ width: '20rem',margin: '1rem' }}>
@@ -111,11 +113,15 @@ export function Drink() {
 
   console.log(drinks);
   
-
+ 
 
   
 
-  return(<div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
+  return(<>
+    
+     
+  <div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
+   
   {drinks.map((drinky) =>(
      
  <Card  key={drinky}  style={{ width: '20rem',margin: '1rem' }}>
@@ -133,6 +139,7 @@ export function Drink() {
 
  ))}
  </div>
+ </> 
   );
 };
   

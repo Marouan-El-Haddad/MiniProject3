@@ -48,6 +48,7 @@ export function Menu() {
                                         <li><a href="#">Categories</a>
                                             <ul className="submenu">
                                                 <li><a href="/drinks">Drinks</a></li>
+                                                
                                                 <li><a href="/meals">Meals</a></li>
                                                 <li><a href="/snacks">Snacks</a></li>
                                             </ul>

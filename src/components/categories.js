@@ -23,7 +23,8 @@ import {
         headers: {
           'Access-Control-Allow-Origin': '*',
         }}).then((response) => {
-        setPost(response.data);
+        console.log(response.data);
+        setPost(Object.keys(response.data));
      
       });
     }, []);
