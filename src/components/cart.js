@@ -6,6 +6,19 @@ import Button from 'react-bootstrap/Button';
 
 import React from 'react';
 import axios from 'axios';
+import { Removebutton } from './Removebutton';
+ function TotalPrice(cartItems) {
+  let total = 0;
+
+  cartItems.cart.map(item => {
+      total += item.price*item.productNumber;
+  });
+
+  return total;
+}
+
+
+
 
 export  function Cartelement(props){
 
@@ -71,6 +84,9 @@ return(
   }, []);
   if (!cartItems) return null;
 
+  
+
+  
 
 
   
@@ -102,6 +118,7 @@ return(
                  <th scope="col">Product</th>
                  <th scope="col">Price</th>
                  <th scope="col">Quantity</th>
+                 <th scope="col"></th>
                
                </tr>
              </thead><tbody>
@@ -114,22 +131,25 @@ return(
                        <div class="media-body">
                         
                          <p> <Cartelement prodid={carty.productId}/></p>
+                        
                        </div>
                      </div>
                    </td>
                    <td>
+                     
                      <div class="product_count">
                      
-               
+                     {carty.productNumber}
                      </div>
                    </td>
-                   {carty.productNumber}
-                 </tr>
-                 <tr>
-               
+                  
                  </tr>
                 
-                 
+                 <tr>
+                  <Button variant="primary mr-1"><Removebutton productId={carty.productId} /></Button>
+                 </tr>
+                
+               
                </tbody>
               
                </div>
@@ -145,7 +165,7 @@ return(
                      <h5>Subtotal</h5>
                    </td>
                    <td>
-                     <h5>$2160.00</h5>
+                     {TotalPrice(cartItems)}
                    </td>
                  </tr>
                  <tr>
