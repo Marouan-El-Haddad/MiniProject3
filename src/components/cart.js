@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import React from 'react';
 import axios from 'axios';
 
-export  function Proder(props){
+export  function Cartelement(props){
 
  
 
@@ -113,7 +113,7 @@ return(
                        </div>
                        <div class="media-body">
                         
-                         <p> <Proder prodid={carty.productId}/></p>
+                         <p> <Cartelement prodid={carty.productId}/></p>
                        </div>
                      </div>
                    </td>

@@ -4,6 +4,8 @@ import axios from 'axios';
 import React from 'react'
 import  { useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { AddButton } from './Addbutton';
+import { Removebutton } from './Removebutton';
 
 
  
@@ -34,35 +36,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
     console.log(meals);
     
 
-    async function removeproduct(productId) {
-      let user = JSON.parse(localStorage.getItem('user'));
-      const URI=`http://127.0.0.1:3001/cart/${user.id}/products`;
-      try{
-        let res = await axios.delete(`${URI}/${productId}`)
-        console.log(res);
-      }catch(err){
-        console.log(err);
-      }
-     
-    }
-
-
-
-
-     async function addproduct(productId,productNumber=1) {
-      let user = JSON.parse(localStorage.getItem('user'));
-    
-      const adder = {
-        "productId":productId,
-        "productNumber":productNumber
-      
-    }
-    let response = await axios.post(`http://127.0.0.1:3001/cart/${user.id}`
-    , adder);
-    console.log(response);
-  }
-  
-
     return(<div class="row  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"  >
     {meals.map((mealy) =>(
     
@@ -74,8 +47,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
     <Card.Text>
     Price {mealy.price}
     </Card.Text>
-    <Button variant="primary mr-2"onClick={()=>addproduct(mealy.productId)}>Add</Button>
-    <Button variant="primary" onClick={()=>removeproduct(mealy.productId)}>Remove</Button>
+    <AddButton productId={mealy.productId}/>
+    <Removebutton productId={mealy.productId} />
   </Card.Body>
 </Card>
 
@@ -112,8 +85,8 @@ export function Snack() {
   <Card.Text>
   Price {snacky.price}
   </Card.Text>
-  <Button variant="primary mr-2">Add</Button>
-  <Button variant="primary">Remove</Button>
+  <AddButton productId={snacky.productId}/>
+  <Removebutton productId={snacky.productId} />
 </Card.Body>
 </Card>
 
@@ -153,8 +126,8 @@ export function Drink() {
   <Card.Text>
   Price {drinky.price}
   </Card.Text>
-  <Button variant="primary mr-2" >Add</Button>
-  <Button variant="primary">Remove</Button>
+  <AddButton productId={drinky.productId}/>
+  <Removebutton productId={drinky.productId} />
 </Card.Body>
 </Card>
 
